@@ -1,0 +1,83 @@
+Transfer Setup,إعداد النقل
+Transfer Map,مطابقة النقل
+Transfer Ledger,سجل النقل
+Source,المصدر
+Source Mode,نمط المصدر
+Same Site,نفس الموقع
+Remote Site,موقع خارجي
+Source Company,الشركة المصدر
+Source Site URL,رابط موقع المصدر
+API Key,مفتاح API
+API Secret,سر API
+Target and Date Range,الهدف والفترة
+Target Company,الشركة الهدف
+From Date,من تاريخ
+To Date,إلى تاريخ
+Documents,المستندات
+Options,الخيارات
+Broken Chain Policy,سياسة السلسلة المقطوعة
+Clear Link,مسح الرابط
+Skip Document,تخطي المستند
+Preserve Document Names,الإبقاء على أرقام المستندات
+Dry Run Limit,حد التشغيل التجريبي
+Strip Field Prefixes,بادئات الحقول المستبعدة
+ZATCA Guard Rules,قواعد حماية زاتكا
+ZATCA submission is disabled for the target company during the run,تم إيقاف الإرسال إلى زاتكا للشركة الهدف أثناء النقل
+Status,الحالة
+Phase,المرحلة
+Job Running,مهمة قيد التشغيل
+Progress,التقدم
+Summary,الملخص
+Transfer,النقل
+Review,مراجعة
+Finish,إنهاء
+1. Scan,1. فحص
+2. Dry Run,2. تشغيل تجريبي
+3. Run,3. تنفيذ
+4. Verify,4. تحقق
+Reverse Source (optional),إلغاء المستندات في المصدر (اختياري)
+Unmapped Values,قيم غير مطابقة
+All Mappings,كل المطابقات
+Ledger,السجل
+Clear Non-Core Unmapped,مسح غير المطابق (غير الأساسي)
+Download Reconciliation CSV,تنزيل ملف المطابقة CSV
+Finalize and Purge,إنهاء وحذف كل البيانات
+Purge,حذف
+Reset Job Lock,فك قفل المهمة
+Save the form first,احفظ النموذج أولاً
+Run Scan to see what will be transferred.,شغّل الفحص لمعرفة ما سيتم نقله.
+Document,المستند
+Found,الموجود
+Queued,في الانتظار
+Excluded,مستبعد
+Target,الهدف
+Blockers,عوائق
+Blocked documents,مستندات محجوبة
+Unmapped values at scan,قيم غير مطابقة عند الفحص
+Documents with cleared links,مستندات بروابط ممسوحة
+Job failed,فشلت المهمة
+Type the target company abbreviation to confirm,اكتب اختصار الشركة الهدف للتأكيد
+Download the reconciliation CSV first. This permanently deletes all transfer data.,نزّل ملف المطابقة أولاً. هذا الإجراء يحذف كل بيانات النقل نهائياً.
+All transfer data removed. Uninstall the app from the site now.,تم حذف كل بيانات النقل. قم بإزالة التطبيق من الموقع الآن.
+Type,النوع
+Source Value,القيمة في المصدر
+Target Value,القيمة في الهدف
+Action,الإجراء
+Map,مطابقة
+Clear,مسح
+Auto,تلقائي
+Manual,يدوي
+Unmapped,غير مطابق
+Uses,مرات الاستخدام
+Seq,التسلسل
+Pending,قيد الانتظار
+Done,تم
+Failed,فشل
+Skipped,تم التخطي
+Blocked,محجوب
+Dry Run,تشغيل تجريبي
+Verify,تحقق
+Mismatch,عدم تطابق
+Reversed in Source,ملغى في المصدر
+Message,رسالة
+Notes,ملاحظات
