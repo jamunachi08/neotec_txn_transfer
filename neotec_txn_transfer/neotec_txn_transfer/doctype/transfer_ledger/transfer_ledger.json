@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "creation": "2026-10-06 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "module": "Neotec Txn Transfer",
+ "name": "Transfer Ledger",
+ "owner": "Administrator",
+ "modified": "2026-10-08 10:00:00.000000",
+ "modified_by": "Administrator",
+ "custom": 0,
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0,
+ "index_web_pages_for_search": 0,
+ "sort_field": "seq",
+ "sort_order": "ASC",
+ "states": [],
+ "links": [],
+ "field_order": [
+  "seq",
+  "source_doctype",
+  "source_name",
+  "target_name",
+  "cb_led",
+  "status",
+  "dry_status",
+  "verify_status",
+  "reversed",
+  "section_notes",
+  "message",
+  "dry_note",
+  "verify_note",
+  "reverse_note",
+  "section_data",
+  "deps",
+  "row_map",
+  "snapshot",
+  "src_doc"
+ ],
+ "fields": [
+  {
+   "fieldname": "seq",
+   "fieldtype": "Int",
+   "label": "Seq",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "source_doctype",
+   "fieldtype": "Data",
+   "label": "DocType",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "source_name",
+   "fieldtype": "Data",
+   "label": "Source",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "target_name",
+   "fieldtype": "Data",
+   "label": "Target",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb_led",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nDone\nFailed\nUncertain\nSkipped\nBlocked",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "dry_status",
+   "fieldtype": "Select",
+   "label": "Dry Run",
+   "options": "\nOK\nFailed",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "verify_status",
+   "fieldtype": "Select",
+   "label": "Verify",
+   "options": "\nOK\nMismatch",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "reversed",
+   "fieldtype": "Check",
+   "label": "Reversed in Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "label": "Message",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dry_note",
+   "fieldtype": "Small Text",
+   "label": "Dry Run Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verify_note",
+   "fieldtype": "Small Text",
+   "label": "Verify Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reverse_note",
+   "fieldtype": "Small Text",
+   "label": "Reverse Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_data",
+   "fieldtype": "Section Break",
+   "label": "Data",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "deps",
+   "fieldtype": "Long Text",
+   "label": "Depends On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "row_map",
+   "fieldtype": "Long Text",
+   "label": "Row Map",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "snapshot",
+   "fieldtype": "Long Text",
+   "label": "Source Snapshot",
+   "read_only": 1
+  },
+  {
+   "fieldname": "src_doc",
+   "fieldtype": "Long Text",
+   "label": "Source Document",
+   "read_only": 1,
+   "hidden": 1
+  }
+ ],
+ "autoname": "hash",
+ "naming_rule": "Random",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "delete": 1,
+   "export": 1
+  }
+ ],
+ "title_field": "source_name",
+ "search_fields": "source_name,target_name"
+}

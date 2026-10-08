@@ -1,0 +1,342 @@
+{
+ "actions": [],
+ "creation": "2026-10-06 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "module": "Neotec Txn Transfer",
+ "name": "Transfer Setup",
+ "owner": "Administrator",
+ "modified": "2026-10-08 10:00:00.000000",
+ "modified_by": "Administrator",
+ "custom": 0,
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0,
+ "index_web_pages_for_search": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "links": [],
+ "field_order": [
+  "section_source",
+  "source_mode",
+  "source_company",
+  "cb_source",
+  "remote_url",
+  "api_key",
+  "api_secret",
+  "section_target_site",
+  "target_url",
+  "cb_target_site",
+  "target_api_key",
+  "target_api_secret",
+  "section_target",
+  "target_company",
+  "cb_target",
+  "from_date",
+  "to_date",
+  "section_scope",
+  "include_sales_order",
+  "include_delivery_note",
+  "include_sales_invoice",
+  "cb_scope",
+  "include_purchase_order",
+  "include_purchase_receipt",
+  "include_purchase_invoice",
+  "cb_scope2",
+  "include_payment_entry",
+  "section_options",
+  "broken_chain_policy",
+  "preserve_names",
+  "dry_run_limit",
+  "cb_options",
+  "strip_field_prefixes",
+  "zatca_guard",
+  "zatca_ack",
+  "section_status",
+  "phase",
+  "job_running",
+  "cb_status",
+  "progress",
+  "job_heartbeat",
+  "section_summary",
+  "summary_html",
+  "summary_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_source",
+   "fieldtype": "Section Break",
+   "label": "Source"
+  },
+  {
+   "fieldname": "source_mode",
+   "fieldtype": "Select",
+   "label": "Source Mode",
+   "options": "Same Site\nRemote Site\nPush to Remote Target",
+   "default": "Same Site",
+   "reqd": 1,
+   "description": "Same Site: both companies here. Remote Site: pull from another site into this one. Push to Remote Target: send from this site to another site."
+  },
+  {
+   "fieldname": "source_company",
+   "fieldtype": "Data",
+   "label": "Source Company",
+   "reqd": 1,
+   "description": "Exact company name as it is on the source site"
+  },
+  {
+   "fieldname": "cb_source",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remote_url",
+   "fieldtype": "Data",
+   "label": "Source Site URL",
+   "depends_on": "eval:doc.source_mode=='Remote Site'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Remote Site'",
+   "options": "URL"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key",
+   "depends_on": "eval:doc.source_mode=='Remote Site'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Remote Site'"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret",
+   "depends_on": "eval:doc.source_mode=='Remote Site'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Remote Site'"
+  },
+  {
+   "fieldname": "section_target_site",
+   "fieldtype": "Section Break",
+   "label": "Target Site",
+   "depends_on": "eval:doc.source_mode=='Push to Remote Target'"
+  },
+  {
+   "fieldname": "target_url",
+   "fieldtype": "Data",
+   "label": "Target Site URL",
+   "options": "URL",
+   "depends_on": "eval:doc.source_mode=='Push to Remote Target'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Push to Remote Target'"
+  },
+  {
+   "fieldname": "cb_target_site",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_api_key",
+   "fieldtype": "Data",
+   "label": "Target API Key",
+   "depends_on": "eval:doc.source_mode=='Push to Remote Target'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Push to Remote Target'"
+  },
+  {
+   "fieldname": "target_api_secret",
+   "fieldtype": "Password",
+   "label": "Target API Secret",
+   "depends_on": "eval:doc.source_mode=='Push to Remote Target'",
+   "mandatory_depends_on": "eval:doc.source_mode=='Push to Remote Target'"
+  },
+  {
+   "fieldname": "section_target",
+   "fieldtype": "Section Break",
+   "label": "Target and Date Range"
+  },
+  {
+   "fieldname": "target_company",
+   "fieldtype": "Data",
+   "label": "Target Company",
+   "reqd": 1,
+   "description": "Exact company name as it is on the target site"
+  },
+  {
+   "fieldname": "cb_target",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_scope",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "include_sales_order",
+   "fieldtype": "Check",
+   "label": "Sales Order",
+   "default": "1"
+  },
+  {
+   "fieldname": "include_delivery_note",
+   "fieldtype": "Check",
+   "label": "Delivery Note",
+   "default": "1"
+  },
+  {
+   "fieldname": "include_sales_invoice",
+   "fieldtype": "Check",
+   "label": "Sales Invoice",
+   "default": "1"
+  },
+  {
+   "fieldname": "cb_scope",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "include_purchase_order",
+   "fieldtype": "Check",
+   "label": "Purchase Order",
+   "default": "1"
+  },
+  {
+   "fieldname": "include_purchase_receipt",
+   "fieldtype": "Check",
+   "label": "Purchase Receipt",
+   "default": "1"
+  },
+  {
+   "fieldname": "include_purchase_invoice",
+   "fieldtype": "Check",
+   "label": "Purchase Invoice",
+   "default": "1"
+  },
+  {
+   "fieldname": "cb_scope2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "include_payment_entry",
+   "fieldtype": "Check",
+   "label": "Payment Entry",
+   "default": "1"
+  },
+  {
+   "fieldname": "section_options",
+   "fieldtype": "Section Break",
+   "label": "Options",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "broken_chain_policy",
+   "fieldtype": "Select",
+   "label": "Broken Chain Policy",
+   "options": "Clear Link\nSkip Document",
+   "default": "Clear Link",
+   "description": "When a document links to one outside the transfer: clear the link, or skip the document and everything that depends on it"
+  },
+  {
+   "fieldname": "preserve_names",
+   "fieldtype": "Check",
+   "label": "Preserve Document Names",
+   "depends_on": "eval:doc.source_mode=='Remote Site'",
+   "description": "Remote mode only: create target documents with the source names"
+  },
+  {
+   "fieldname": "dry_run_limit",
+   "fieldtype": "Int",
+   "label": "Dry Run Limit",
+   "default": "0",
+   "description": "0 = all pending documents"
+  },
+  {
+   "fieldname": "cb_options",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "strip_field_prefixes",
+   "fieldtype": "Small Text",
+   "label": "Strip Field Prefixes",
+   "default": "custom_zatca\nzatca_\nksa_\ncustom_ksa",
+   "description": "One per line. Fields starting with these are never copied (e-invoice/QR/UUID fields)"
+  },
+  {
+   "fieldname": "zatca_guard",
+   "fieldtype": "Small Text",
+   "label": "ZATCA Guard Rules",
+   "default": "link:Sales Invoice Additional Fields:sales_invoice\nfield:custom_zatca_status\nfield:custom_uuid",
+   "description": "Used by Reverse Source. field:<fieldname> or link:<DocType>:<fieldname>"
+  },
+  {
+   "fieldname": "zatca_ack",
+   "fieldtype": "Check",
+   "label": "ZATCA submission is disabled for the target company during the run"
+  },
+  {
+   "fieldname": "section_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "phase",
+   "fieldtype": "Select",
+   "label": "Phase",
+   "options": "Setup\nScanned\nDry Run Done\nRun Partial\nRun Done\nVerified\nVerify Mismatch\nReversed",
+   "default": "Setup",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_running",
+   "fieldtype": "Check",
+   "label": "Job Running",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "progress",
+   "fieldtype": "Small Text",
+   "label": "Progress",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_heartbeat",
+   "fieldtype": "Datetime",
+   "label": "Last Progress At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_summary",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "summary_html",
+   "fieldtype": "HTML",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "summary_json",
+   "fieldtype": "Long Text",
+   "label": "Summary JSON",
+   "hidden": 1,
+   "read_only": 1
+  }
+ ],
+ "issingle": 1,
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "description": "One-time transfer of transactions between companies. Remove the app when finished."
+}
